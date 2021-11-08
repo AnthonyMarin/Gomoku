@@ -1,3 +1,4 @@
+var newGame;
 const squares = [   "a1","b1","c1","d1", "e1", "f1", "g1", "h1", "i1", "j1" , "k1", "l1", "m1", "n1", "o1",
                     "a2","b2","c2","d2", "e2", "f2", "g2", "h2", "i2", "j2" , "k2", "l2", "m2", "n2", "o2",
                     "a3","b3","c3","d3", "e3", "f3", "g3", "h3", "i3", "j3" , "k3", "l3", "m3", "n3", "o3",
@@ -13,3 +14,64 @@ const squares = [   "a1","b1","c1","d1", "e1", "f1", "g1", "h1", "i1", "j1" , "k
                     "a13","b13","c13","d13", "e13", "f13", "g13", "h13", "i13", "j13" , "k13", "l13", "m13", "n13", "o13",
                     "a14","b14","c14","d14", "e14", "f14", "g14", "h14", "i14", "j14" , "k14", "l14", "m14", "n14", "o14",
                     "a15","b15","c15","d15", "e15", "f15", "g15", "h15", "i15", "j15" , "k15", "l15", "m15", "n15", "o15"]
+
+class Player{
+    constructor(playerNum,playerMoves){
+        this.playerMoves = playerMoves;
+        this.playerNum = playerNum;
+    }
+
+};
+class Game{
+    constructor(p1Active, startTime,elapsedTime, endTime,gameActive){
+        this.p1Active = p1Active;
+        this.startTime = startTime;
+        this.elapsedTime = elapsedTime;
+        this.endTime = endTime;
+        this.gameActive=  gameActive;
+
+      
+    }
+    start(){
+        this.startTime = new Date();
+        
+
+    }
+    end(){
+        this.endTime = new Date();
+        var timeDiff = this.endTime - this.startTime;
+        timeDiff /= 1000;
+        var seconds=  Math.round(timeDiff);
+      
+    }
+    getElapsedTime(){
+        return this.elapsedTime;
+    }
+    switchPlayer(){
+        this.p1Active = !this.p1Active;
+    }
+
+
+};
+
+function createGame(){
+    newGame = new Game(true,0,0,0,true);
+     return;
+
+}
+function gameHandler(){
+
+    createGame();
+
+    setInterval(()=>{
+        if(newGame.p1Active){
+            document.getElementById("currentPlayer").innerHTML = "Player 1's Turn";
+        }else{
+            document.getElementById("currentPlayer").innerHTML = "Player 2's Turn";
+        }
+    },200)
+    
+
+    
+}
+
