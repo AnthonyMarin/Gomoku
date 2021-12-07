@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="game.css">
     <script src = "gameJavaScript.js"></script>
+    <script src = "clickListener.js"></script>
 </head>
 <body onload = "gameHandler()">
     <section>
@@ -10,15 +11,14 @@
             <h1>Gomoku</h1>
         </div>
     </section>
-    <section>
-        <div id = "gameInfo">
-            <div id = "timer"><h3 >Time:<h3 id = "time"></h3></h3></div>
-            <div id = "currentPlayer"></div>
-        </div>
+    <section id = "gameInfo">
+            <article id = "timer"><h3 >Time:<h3 id = "time"></h3></h3></article>
+            <article id = "currentPlayer"></article>
+    </section>
 
-        <div class="grid-container">
+        <section class="grid-container">
 <!--switch rows and coums-->
-            <div id="col1">
+            <div id="col1" class = 'P1 '>
                 
                 <div class="row1"></div>
                 <div class="row2"></div>
@@ -36,7 +36,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col2">
+            <div id="col2" class = 'P1 '>
                 
                 <div class="row1"></div>
                 <div class="row2"></div>
@@ -54,7 +54,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col3">
+            <div id="col3" class = 'P1 '>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -71,7 +71,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col4">
+            <div id="col4" class = 'P1 '>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -88,7 +88,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col5">
+            <div id="col5" class = 'P1 '>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -105,7 +105,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col6">
+            <div id="col6" class = 'P1 '>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -122,7 +122,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col7">
+            <div id="col7" class = 'P1 '>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -139,7 +139,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col8">
+            <div id="col8" class = 'P1'>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -156,7 +156,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col9">
+            <div id="col9" class = 'P1' >
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -173,7 +173,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col10">
+            <div id="col10" class = 'P1'>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -190,7 +190,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col11">
+            <div id="col11" class = 'P1'>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -207,7 +207,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col12">
+            <div id="col12" class = 'P1'>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -224,7 +224,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col13">
+            <div id="col13" class = 'P1'>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -241,7 +241,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col14">
+            <div id="col14" class = 'P1'>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -258,7 +258,7 @@
                 <div class="row14"></div>
                 <div class="row15"></div>
             </div>
-            <div id="col15">
+            <div id="col15" class = 'P1'>
                 <div class="row1"></div>
                 <div class="row2"></div>
                 <div class="row3"></div>
@@ -276,7 +276,7 @@
                 <div class="row15"></div>
             </div>
          
-            </div>
+        </section>
 
         </div>
 

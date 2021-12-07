@@ -1,4 +1,6 @@
 var newGame;
+var size = 15;
+
 const squares = [   "a1","b1","c1","d1", "e1", "f1", "g1", "h1", "i1", "j1" , "k1", "l1", "m1", "n1", "o1",
                     "a2","b2","c2","d2", "e2", "f2", "g2", "h2", "i2", "j2" , "k2", "l2", "m2", "n2", "o2",
                     "a3","b3","c3","d3", "e3", "f3", "g3", "h3", "i3", "j3" , "k3", "l3", "m3", "n3", "o3",
@@ -15,6 +17,9 @@ const squares = [   "a1","b1","c1","d1", "e1", "f1", "g1", "h1", "i1", "j1" , "k
                     "a14","b14","c14","d14", "e14", "f14", "g14", "h14", "i14", "j14" , "k14", "l14", "m14", "n14", "o14",
                     "a15","b15","c15","d15", "e15", "f15", "g15", "h15", "i15", "j15" , "k15", "l15", "m15", "n15", "o15"]
 
+var gridBin = new Array(size*size).fill(0);
+console.log(gridBin);
+
 class Player{
     constructor(playerNum,playerMoves){
         this.playerMoves = playerMoves;
@@ -23,12 +28,13 @@ class Player{
 
 };
 class Game{
-    constructor(p1Active, startTime,elapsedTime, endTime,gameActive){
+    constructor(p1Active, startTime,elapsedTime, endTime,gameActive,gameSize){
         this.p1Active = p1Active;
         this.startTime = startTime;
         this.elapsedTime = elapsedTime;
         this.endTime = endTime;
         this.gameActive=  gameActive;
+        this.gameSize = gameSize;
 
       
     }
@@ -48,14 +54,19 @@ class Game{
         return this.elapsedTime;
     }
     switchPlayer(){
+        changePlayerStyle(this.p1Active);
         this.p1Active = !this.p1Active;
+        
     }
 
 
 };
 
+
 function createGame(){
-    newGame = new Game(true,0,0,0,true);
+    newGame = new Game(true,0,0,0,true,15);
+    size = newGame.gameSize;
+    
      return;
 
 }
@@ -70,8 +81,49 @@ function gameHandler(){
             document.getElementById("currentPlayer").innerHTML = "Player 2's Turn";
         }
     },200)
+
+
     
 
+    
     
 }
+createGame();
+function changePlayerStyle(x){
 
+    console.log(x);
+    if(x){
+
+        for(let i  =0;i< size;i++){
+        if(cols[i].classList.contains('p1Clicked' || 'p2Clicked')){
+            cols[i].classList.remove('P1');
+                cols[i].classList.remove('P2');
+        }else{
+            cols[i].classList.remove('P1');
+            cols[i].classList.add('P2');
+
+        }
+        
+        
+           
+        }
+    }else{
+        for(let i =0;i< size;i++){
+            if(cols[i].classList.contains('p1Clicked' || 'p2Clicked')){
+                cols[i].classList.remove('P1');
+                cols[i].classList.remove('P2');
+            }else{
+                
+                cols[i].classList.remove('P2');
+                cols[i].classList.add('P1');
+
+            }
+           
+
+         
+            }
+            
+    }
+
+
+}

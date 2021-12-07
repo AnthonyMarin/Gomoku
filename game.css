@@ -31,3 +31,15 @@ display : inline-block;
 #currentPlayer{
     float:right;
 }
+.P1 div:hover{
+    background-color:black;
+}
+.P2 div:hover{
+    background-color:red;
+}
+.p1Clicked{
+    background-color: black;
+}
+.p2Clicked{
+    background-color: red;
+}
