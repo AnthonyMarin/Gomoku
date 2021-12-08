@@ -28,19 +28,27 @@ class Player{
 
 };
 class Game{
-    constructor(p1Active, startTime,elapsedTime, endTime,gameActive,gameSize){
+    constructor(p1Active, startTime,elapsedTime, endTime,gameActive,gameSize,moves){
         this.p1Active = p1Active;
         this.startTime = startTime;
         this.elapsedTime = elapsedTime;
         this.endTime = endTime;
         this.gameActive=  gameActive;
         this.gameSize = gameSize;
+        this.moves = moves;
 
       
     }
     start(){
         this.startTime = new Date();
         
+
+    }
+    getMoves(){
+        return this.moves;
+    }
+    incMoves(){
+        this.moves++;
 
     }
     end(){
@@ -64,7 +72,7 @@ class Game{
 
 
 function createGame(){
-    newGame = new Game(true,0,0,0,true,15);
+    newGame = new Game(true,0,0,0,true,15,0); //p1 active, start time, elaps, endTime, gameActive, gameSize, moves
     size = newGame.gameSize;
     
      return;
@@ -75,6 +83,17 @@ function gameHandler(){
     createGame();
 
     setInterval(()=>{
+
+        if(newGame.gameActive == false){
+            let curPlayer;
+            if(newGame.p1Active){
+                curPlayer = 'Player 1'
+            }else{
+                curPlayer=  'Player 2'
+            }
+            window.location.href = 'results.php?victor='+curPlayer;
+           // window.location.replace('results.php?victor='+curPlayer);
+        }
         if(newGame.p1Active){
             document.getElementById("currentPlayer").innerHTML = "Player 1's Turn";
         }else{
@@ -90,8 +109,9 @@ function gameHandler(){
 }
 createGame();
 function changePlayerStyle(x){
+    
 
-    console.log(x);
+    //console.log(x);
     if(x){
 
         for(let i  =0;i< size;i++){

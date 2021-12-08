@@ -46,33 +46,44 @@ window.addEventListener('load', function () {
   }
 });
 function makeMove(x,y,element){
-  console.log(x,y);
-  
-  
-  if(element.classList.contains('p1Clicked' ||'p2Clicked')){
+
+  if(element.classList.contains('p1Clicked')){//does nothing if p1 has clicked this spot
     
+    //console.log('already selected');
+  }else if(element.classList.contains('p2Clicked')){ //does nothing if p2 has clicked this spot 
+  
   }else{
-    if(newGame.p1Active){
+    if(newGame.p1Active){ //checks if p1 is playing
       element.classList.add('p1Clicked');
     }else{
-      element.classList.add('p2Clicked');
+      element.classList.add('p2Clicked'); //marks who clicked the spot
     }
-    logPlay(x,y);
+    newGame.incMoves();
+
+    element.innerText = newGame.getMoves();
+
+   logPlay(x,y); //mark in 2d array
+  if(newGame.gameActive){ ///if not a win condition, keep playing
   newGame.switchPlayer();
   }
+  }
+  
 
  
  
 }
 function logPlay(x,y){
+  let pos = x+(y*15)
+ // console.log(pos);
 
 if(newGame.p1Active){
-  let pos = x+(y*15)
+ 
+  
   gridBin[pos] = 1;
 }else{
-  let pos = x+(y*15)
   gridBin[pos] = 2;
 }
+checkWinConditions();
 
 
 
