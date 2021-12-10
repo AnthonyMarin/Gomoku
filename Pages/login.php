@@ -1,5 +1,6 @@
 <?php
 
+
 ?>
 <html>
 <head> <link rel="stylesheet" href="../CSS/signUp.css">
@@ -29,7 +30,7 @@
 
     <div class="clearfix">
      <a  href = 'index.php'> <button type="button"class="cancelbtn">Cancel</button></a>
-      <button type="button" onclick = "login()" class="signupbtn">Log In</button>
+      <button type="button" onclick = "loginRequest()" class="signupbtn">Log In</button>
     </div>
   </div>
 </form>
