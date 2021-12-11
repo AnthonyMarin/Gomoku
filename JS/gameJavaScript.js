@@ -91,7 +91,9 @@ function gameHandler(){
             }else{
                 curPlayer=  'Player 2'
             }
-            window.location.href = 'results.php?victor='+curPlayer;
+            let results =   JSON.stringify(newGame);
+
+            window.location.href = 'results.php?victor='+curPlayer+'&results='+results;
            // window.location.replace('results.php?victor='+curPlayer);
         }
         if(newGame.p1Active){

@@ -5,6 +5,10 @@
     <script src = "../JS/gameJavaScript.js"></script>
     <script src = "../JS/clickListener.js"></script>
     <script src = "../JS/winConditions.JS"></script>
+
+    <?php 
+        session_start();
+    ?>
     
 </head>
 <body onload = "gameHandler()">

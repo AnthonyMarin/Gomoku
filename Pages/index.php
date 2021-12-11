@@ -31,7 +31,7 @@
             <div id = "menu container">
                 <table id = "menuTable">
                     <tbody>
-                        <tr onclick="window.location='game.html';" ><td><p>Play</p></td></tr>
+                        <tr onclick="window.location='game.php';" ><td><p>Play</p></td></tr>
                         <tr><td><p>Leaderboard</p></td></tr>
                         <?php
                        
