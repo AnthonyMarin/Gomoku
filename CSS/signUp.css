@@ -42,9 +42,6 @@ button {
   opacity: 0.9;
 }
 
-button:hover {
-  opacity:1;
-}
 
 /* Extra styles for the cancel button */
 .cancelbtn {
@@ -76,6 +73,10 @@ button:hover {
      width: 100%;
   }
 }
+button:hover {
+  opacity:1;
+}
+
 #submitError{
   color:red;
 }

@@ -1,20 +1,32 @@
+<?php 
+           session_start();
+           if( isset($_SESSION['username'])){
+              
+               
+           echo('Hello '.$_SESSION['username'].'!');
+   
+           
+           }else{
+          
+   
+           }
+?>
+    
 <!DOCTYPE html>
 <html>
 <head>
     <link rel="stylesheet" href="../CSS/game.css">
-    <script src = "../JS/gameJavaScript.js"></script>
     <script src = "../JS/clickListener.js"></script>
+    <script src = "../JS/gameJavaScript.js"></script>
+ 
     <script src = "../JS/winConditions.JS"></script>
 
-    <?php 
-        session_start();
-    ?>
-    
+ 
 </head>
 <body onload = "gameHandler()">
     <section>
         <div>
-            <h1>Gomoku</h1>
+            <h1 id = 'gom'>Gomoku</h1>
         </div>
     </section>
     <section id = "gameInfo">

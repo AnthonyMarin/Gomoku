@@ -31,7 +31,7 @@
             <div id = "menu container">
                 <table id = "menuTable">
                     <tbody>
-                        <tr onclick="window.location='game.php';" ><td><p>Play</p></td></tr>
+                        <tr onclick= "window.location.replace('game.php'); " ><td><p>Play</p></td></tr>
                         <tr><td><p>Leaderboard</p></td></tr>
                         <?php
                        
@@ -41,7 +41,7 @@
                          $logoutURL = '"window.location='."'logoutSuccess.php'".';"';
                         
                             if( isset( $_SESSION['username'])){
-                                session_destroy();
+                           
                                 echo(' <tr onclick='.$logoutURL.'><td><p>Log-Out</p></div></td></tr>');
                                
                             }else{

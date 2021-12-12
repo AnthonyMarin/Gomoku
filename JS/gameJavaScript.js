@@ -1,5 +1,6 @@
 var newGame;
 var size = 15;
+var timeBox;
 
 const squares = [   "a1","b1","c1","d1", "e1", "f1", "g1", "h1", "i1", "j1" , "k1", "l1", "m1", "n1", "o1",
                     "a2","b2","c2","d2", "e2", "f2", "g2", "h2", "i2", "j2" , "k2", "l2", "m2", "n2", "o2",
@@ -18,7 +19,8 @@ const squares = [   "a1","b1","c1","d1", "e1", "f1", "g1", "h1", "i1", "j1" , "k
                     "a15","b15","c15","d15", "e15", "f15", "g15", "h15", "i15", "j15" , "k15", "l15", "m15", "n15", "o15"]
 
 var gridBin = new Array(size*size).fill(0);
-console.log(gridBin);
+//console.log(gridBin);
+
 
 class Player{
     constructor(playerNum,playerMoves){
@@ -53,12 +55,17 @@ class Game{
     }
     end(){
         this.endTime = new Date();
-        var timeDiff = this.endTime - this.startTime;
-        timeDiff /= 1000;
-        var seconds=  Math.round(timeDiff);
+        this.elapsedTime = this.endTime - this.startTime;
+        this.elapsedTime /= 1000;
+        this.elapsedTime=  Math.round(this.elapsedTime);
+
       
     }
     getElapsedTime(){
+        let tmpTime = new Date();
+        this.elapsedTime = tmpTime - this.startTime;
+        this.elapsedTime /= 1000;
+        this.elapsedTime=  Math.round(this.elapsedTime);
         return this.elapsedTime;
     }
     switchPlayer(){
@@ -73,6 +80,7 @@ class Game{
 
 function createGame(){
     newGame = new Game(true,0,0,0,true,15,0); //p1 active, start time, elaps, endTime, gameActive, gameSize, moves
+    newGame.start();
     size = newGame.gameSize;
     
      return;
@@ -91,11 +99,13 @@ function gameHandler(){
             }else{
                 curPlayer=  'Player 2'
             }
+            newGame.end();
             let results =   JSON.stringify(newGame);
 
             window.location.href = 'results.php?victor='+curPlayer+'&results='+results;
            // window.location.replace('results.php?victor='+curPlayer);
         }
+        document.getElementById('time').innerText = newGame.getElapsedTime();
         if(newGame.p1Active){
             document.getElementById("currentPlayer").innerHTML = "Player 1's Turn";
         }else{

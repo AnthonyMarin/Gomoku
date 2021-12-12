@@ -8,5 +8,29 @@ table{
   margin-left:auto;
   margin-right:auto;
   width:50%;
+  text-align: center;
 
+}
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 100%;
+  }
+}
+button:hover {
+  opacity:1;
 }

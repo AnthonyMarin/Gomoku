@@ -7,6 +7,9 @@ padding-left:23%;
 flex-wrap: nowrap;
 
 }
+#gom{
+    text-align:center;
+}
 .row1,.row2,.row3,.row4,.row5,
 .row6,.row7,.row8,.row9,.row10,
 .row11,.row12,.row13,.row15,.row15
@@ -51,4 +54,13 @@ vertical-align: top;
 }
 .p2Clicked{
     background-color: red;
+}
+#timer{
+    display:flex;
+    flex-direction:row;
+    
+
+}
+body{
+    padding:16px;
 }

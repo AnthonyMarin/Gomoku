@@ -16,6 +16,7 @@ var col15 ;
 
 var cols;
 window.addEventListener('load', function () {
+var timeBox = document.getElementById('time');
  col1 = document.getElementById('col1'); 
  col2 = document.getElementById('col2');
  col3 = document.getElementById('col3');
