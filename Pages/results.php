@@ -1,10 +1,13 @@
 
 <?php
 session_start();
+
+
+
 if( isset($_SESSION['username'])){
     
     $currentSession = true;
-            
+    echo ('<script> var player1Win = 0 </script>');
     echo('Hello '.$_SESSION['username'].'!');
 
     
@@ -17,6 +20,7 @@ $results = $_GET['results'];
 
 if($winner == 'Player 1' && isset($_SESSION['username'])){
     $winner = $_SESSION['username'];
+    echo ('<script>  player1Win = 1</script>');
 }
 
 
@@ -32,6 +36,8 @@ if(isset($_SESSION['username'])){
 //echo $winner.' Wins';
 $json = json_decode($results);
 $elapsedTime = $json->elapsedTime;
+echo ('<script> var time = '.$elapsedTime.' </script>');
+
 
 $moves = $json->{'moves'};
 if($moves%2 != 0){
