@@ -4,6 +4,9 @@
     padding:16px;
     
 }
+body{
+  background-color: rgba(219,0,50,0.35);
+}
 table{
   margin-left:auto;
   margin-right:auto;
@@ -17,7 +20,7 @@ table{
   display: table;
 }
 button {
-  background-color: #04AA6D;
+  background-color: #002E6D;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;

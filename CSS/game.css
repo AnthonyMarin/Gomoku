@@ -1,14 +1,16 @@
 .grid-container {
 
 grid-template-columns: auto auto auto;
-background-color: #2196F3;
-padding: 10px;
+background-color: rgba(0,46,109,.9);
+padding: 5px;
 padding-left:23%;
 flex-wrap: nowrap;
 
 }
 #gom{
     text-align:center;
+   
+    color:white;
 }
 .row1,.row2,.row3,.row4,.row5,
 .row6,.row7,.row8,.row9,.row10,
@@ -43,17 +45,17 @@ vertical-align: top;
 #currentPlayer{
     float:right;
 }
-.P1 div:hover{
+.P1 div:hover:not(.p2Clicked){
     background-color:black;
 }
-.P2 div:hover{
-    background-color:red;
+.P2 div:hover:not(.p1Clicked) {
+    background-color:#DB0032;
 }
 .p1Clicked{
     background-color: black;
 }
 .p2Clicked{
-    background-color: red;
+    background-color: #DB0032;
 }
 #timer{
     display:flex;
@@ -62,5 +64,8 @@ vertical-align: top;
 
 }
 body{
-    padding:16px;
+    padding:10px;
+    background-color: rgba(0,46,109,1);
+    font-size:1.5em;
+    color:white;
 }

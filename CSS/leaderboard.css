@@ -1,0 +1,42 @@
+#pageTitle{
+    text-align:center;
+}
+table, .leaderboard {
+    margin-left:auto;
+    margin-right:auto;
+}
+tr,.leaderboard{
+    padding:4px;
+}
+tr th, tr td, .leaderboard{
+    padding:10px;
+    text-align:center;
+
+}
+
+body {font-family: Arial, Helvetica, sans-serif;
+    padding:16px;
+    background-color: rgba(219,0,50,0.35);
+}
+* {box-sizing: border-box}
+#buttons{
+    text-align:center;
+}
+button {
+    background-color: #002E6D;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  @media screen and (max-width: 300px) {
+    .cancelbtn, .signupbtn {
+       width: 100%;
+    }
+  }
+  button:hover {
+    opacity:1;
+  }

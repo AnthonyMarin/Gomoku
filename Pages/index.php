@@ -24,6 +24,18 @@
         }
         
         ?>
+
+        <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
+        <style>
+            #home{
+                float:right;
+                padding-right:10px;
+                height:60px;
+            }
+            
+        </style>
+        <br>
+        <br>
         <section>
                 <div id = 'heading'><h1>Gomoku</h1></div>
         </section>
@@ -31,8 +43,8 @@
             <div id = "menu container">
                 <table id = "menuTable">
                     <tbody>
-                        <tr onclick= "window.location.replace('game.php'); " ><td><p>Play</p></td></tr>
-                        <tr><td><p>Leaderboard</p></td></tr>
+                        <tr onclick= "window.location=('game.php'); " ><td><p>Play</p></td></tr>
+                        <tr onclick= "window.location=('leaderboard.php?sortType=0'); "><td><p>Leaderboard</p></td></tr>
                         <?php
                        
                          

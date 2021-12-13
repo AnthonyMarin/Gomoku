@@ -77,8 +77,19 @@ if($moves%2 != 0){
         body {font-family: Arial, Helvetica, sans-serif;}
         * {box-sizing: border-box}
     </style>
+    
 
     <body>
+    <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
+        <style>
+            #home{
+                float:right;
+                padding-right:10px;
+                height:60px;
+            }
+            </style>
+        <br>
+        <br>
         <section id = 'content'>
             <h1 id = "winner">Winner: <?php echo $winner ?></h1>
             <br>

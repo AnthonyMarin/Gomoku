@@ -1,15 +1,6 @@
 <?php 
            session_start();
-           if( isset($_SESSION['username'])){
-              
-               
-           echo('Hello '.$_SESSION['username'].'!');
-   
-           
-           }else{
           
-   
-           }
 ?>
     
 <!DOCTYPE html>
@@ -24,6 +15,16 @@
  
 </head>
 <body onload = "gameHandler()">
+<a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
+        <style>
+            #home{
+                float:right;
+                padding-right:10px;
+                height:60px;
+            }
+            </style>
+            <br>
+        <br>
     <section>
         <div>
             <h1 id = 'gom'>Gomoku</h1>

@@ -8,8 +8,17 @@
 </head>
 
 <body onload = 'onLoad();'>
+<a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
+        <style>
+            #home{
+                float:right;
+                padding-right:10px;
+                height:60px;
+            }
+            </style>
 <form  method = 'POST'>
 <div class="container">
+  
     <p id = signUpOption>
     Need an account? <a href = 'signUp.php' > Sign Up </a>
     </p>
