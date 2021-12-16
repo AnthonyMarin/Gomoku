@@ -9,15 +9,49 @@ session_start();
     <head> <link rel="stylesheet" href="../CSS/success.css">
     </head>
     <body>
-    <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
+   
+    <header id = 'topbar'>
+        <div id = "user">
+        <?php
+        
+      
+       
+        
+    
+        if( isset($_SESSION['username'])){
+           
+            
+        echo('Hello '.$_SESSION['username'].'!');
+
+        
+        }else{
+       
+
+        }
+        
+        ?>
+        </div>
+
+        <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
         <style>
             #home{
-                float:right;
-                padding-right:10px;
+                float:left;
                 height:60px;
+                
+            
             }
-            </style>
-            <br>
+            #topbar{
+                height:60px;
+                padding:15px;
+            }
+            
+            #user{
+                padding:15px;
+                float: right;
+            }
+        </style>
+        </header>
+        <br>
         <br>
         <br>
         <br>

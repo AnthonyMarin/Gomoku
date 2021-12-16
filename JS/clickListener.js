@@ -15,7 +15,8 @@ var col14 ;
 var col15 ;
 
 var cols;
-window.addEventListener('load', function () {
+window.addEventListener('load', function () { //load all column eleemnts
+  messageBox =document.getElementById('messageBox');
 var timeBox = document.getElementById('time');
  col1 = document.getElementById('col1'); 
  col2 = document.getElementById('col2');
@@ -34,7 +35,7 @@ var timeBox = document.getElementById('time');
  col15 = document.getElementById('col15');
   cols = [col1,col2,col3,col4,col5,col6,col7,col8,col9,col10,col11,col12,col13,col14,col15];
 
-  boxes = document.querySelectorAll('div div');
+  boxes = document.querySelectorAll('div div');  //gather all row elements
   for(let rowI = 1 ; rowI <= 15 ;rowI++){
   let rowx = 'row'+rowI;
   
@@ -42,7 +43,7 @@ var timeBox = document.getElementById('time');
   
 
   for(let i = 0; i <=14; i++){  
-  temp[i].addEventListener("click", function(){makeMove(i,rowI-1, temp[i]);});
+  temp[i].addEventListener("click", function(){makeMove(i,rowI-1, temp[i]);}); ///add click listeners to my boxes to initiate move process
   }
   }
 });
@@ -84,6 +85,7 @@ if(newGame.p1Active){
 }else{
   gridBin[pos] = 2;
 }
+checkCloseCondition(); //checks for 5 in a row and 4 in a row
 checkWinConditions();
 
 

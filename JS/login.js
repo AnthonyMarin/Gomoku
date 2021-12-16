@@ -36,7 +36,7 @@ function loginCB(){
          
             //let ans= JSON.parse(httpRequest.responseText);
             let ans =httpRequest.responseText;
-
+            console.log(ans);
             if(ans == 1){
               window.location.replace('loginSuccess.php');   //redirect to success page
             }else{

@@ -3,7 +3,7 @@
     margin-right:auto;
     align-items:center;
 } 
-p{
+p,h1{
     text-align:center;
     font-size:x-large;
 }
@@ -21,7 +21,7 @@ td{
     width:20%;
     border:1px solid black ;
 }
-td:hover{
+td{
     background-color:rgba(0,46,109,0.8);
     border-width:2px;
     border-color:#DB0032;

@@ -10,14 +10,31 @@ session_destroy();
     <head> <link rel="stylesheet" href="../CSS/success.css">
     </head>
     <body>
-    <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
+  
+    <header id = 'topbar'>
+       
+    
+        </div>
+
+        <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
         <style>
             #home{
-                float:right;
-                padding-right:10px;
+                float:left;
                 height:60px;
+                
+            
             }
-            </style>
+            #topbar{
+                height:60px;
+                padding:15px;
+            }
+            
+            #user{
+                padding:15px;
+                float: right;
+            }
+        </style>
+        </header>
         <br>
         <br>
         <br>

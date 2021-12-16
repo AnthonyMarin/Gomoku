@@ -2,19 +2,17 @@
  session_start();
  $username = (isset($_POST['username'])) ? $_POST['username'] : 'no name';
  $psw = (isset($_POST['psw'])) ? $_POST['psw'] : 'no psw';
-   
+   //echo $username;
 $array=['username' =>$username, 'psw'=> $psw];
 
 $con = mysqli_connect("localhost","moviesDB","movies","gomoku");
 
-$sql = "SELECT `username`, `psw` FROM `users` WHERE `username`=".$array['username']." AND `psw` =".$array['psw'];
-
-$sql2 = "INSERT INTO `users`(`username`, `psw`, `gamesWon`, `gamesPlayed`, `timePlayed`) VALUES ('".$array['username']."','".$array['psw']."','0','0','0')"; 
+$sql = 'SELECT * FROM `users` WHERE username="'.$array['username'].'" AND psw ='.$array['psw'];///need to add encryption
 $matchingUsers = $con->query($sql);
-$con->close();
-$matchingUser = $matchingUsers->fetch_row();
+$numRows = mysqli_num_rows($matchingUsers);
+//$row = $matchingUsers->fetch_row();
 //echo json_encode($matchingUser);
-if($matchingUser == null){
+if($numRows == false){
 
 
 echo (0);
@@ -26,7 +24,7 @@ echo (0);
 echo(1);
 }
 
-
+$con->close();
 
 
 

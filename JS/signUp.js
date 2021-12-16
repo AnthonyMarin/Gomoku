@@ -49,12 +49,14 @@ function registerCB(){
         if (httpRequest.readyState === XMLHttpRequest.DONE) {
           if (httpRequest.status === 200) {    
          
-            //let ans= JSON.parse(httpRequest.responseText);
-            let ans =httpRequest.responseText;
+            let ans= JSON.parse(httpRequest.responseText);
+            //let ans =httpRequest.responseText;
+            console.log(ans);
 
             if(ans == 1){
               window.location.replace('signUpSuccess.php');   //redirect to success page
             }else{
+            
               errorBox.innerText = 'Username already exists';    //add error message
               
             }

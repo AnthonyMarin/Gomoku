@@ -6,20 +6,27 @@ $array=['username' =>$username, 'psw'=> $psw];
 
 $con = mysqli_connect("localhost","moviesDB","movies","gomoku");
 
-$con2 = mysqli_connect("localhost","moviesDB","movies","gomoku");
+
 //echo mysqli_error($con);
 
-$sql = "SELECT * FROM `users` WHERE `username`=".$array['username'];
+$sql = 'SELECT * FROM `users` WHERE `username`="'.$array['username'].'"';
 
-$sql2 = "INSERT INTO `users`(`username`, `psw`, `gamesWon`, `gamesPlayed`, `timePlayed`) VALUES ('".$array['username']."','".$array['psw']."','0','0','0')"; 
+
 $matchingUsers = $con->query($sql);
-$con->close();
-$matchingUser = $matchingUsers->fetch_row();
+$numRows = mysqli_num_rows($matchingUsers);
+//$matchingUser = $matchingUsers->fetch_row();
 //echo json_encode($matchingUser);
-if($matchingUser == null){
+//echo($numRows);
 
-$con2->query($sql2);
-$con2->close();
+//$con2 = mysqli_connect("localhost","moviesDB","movies","gomoku");
+
+$sql2 = 'INSERT INTO `users`(`username`, `psw`, `gamesWon`, `gamesPlayed`) VALUES ("'.$array['username'].'","'.$array['psw'].'",0,0)'; 
+if( $numRows == 0){
+
+
+//echo ($sql2);
+$con->query($sql2);
+
 echo (1);
 }else{
 echo(0);
@@ -32,7 +39,7 @@ echo(0);
 //echo json_encode($array);
  //$psw = $_GET['psw'];
     
-   
+ $con->close();
 
 
 ?>

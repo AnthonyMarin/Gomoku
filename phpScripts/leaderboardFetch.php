@@ -2,9 +2,9 @@
 $sortType = $_POST['sort'];
 
 $con = mysqli_connect("localhost","moviesDB","movies","gomoku");
-
+///sort type : 0->gamesWon Desc, 1->gamesWon ASC, 2->gamesPlayed DESC, 3->gamesPlayed ASC, 4->timePlayed DESC, 5-> timePlayed asc
 if($sortType == 0){
-    $sql = "SELECT `username`,`gamesWon`,`gamesPlayed`,`timePlayed` FROM `users`  ORDER BY `gamesWon` DESC LIMIT 25";
+    $sql = "SELECT `username`,`gamesWon`,`gamesPlayed`,`timePlayed` FROM `users`  ORDER BY `gamesWon` DESC LIMIT 25";  ///each query takes the top 25 users based on the fields
 }else if($sortType == 1){
     $sql = "SELECT `username`,`gamesWon`,`gamesPlayed`,`timePlayed` FROM `users`  ORDER BY `gamesWon`  LIMIT 25";
 }else if($sortType == 2){

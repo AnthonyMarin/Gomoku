@@ -9,7 +9,8 @@ $p1Win = $_POST['p1Win'];
 
 $con = mysqli_connect("localhost","moviesDB","movies","gomoku");
 
-$sql = "UPDATE `users` SET `gamesWon` = gamesWon + ".$p1Win."  , `gamesPlayed`  = gamesPlayed +1 , `timePlayed` = DATE_ADD(timePlayed, INTERVAL ".$time." second)WHERE `username`=".$_SESSION['username'];
+$sql = 'UPDATE `users` SET `gamesWon` = gamesWon + '.$p1Win.'  , `gamesPlayed`  = gamesPlayed +1 , `timePlayed` = DATE_ADD(timePlayed, INTERVAL '.$time.' second)WHERE `username`="'.$_SESSION['username'].'"';
+                                                                                //updates user info
 
 if($con->query($sql) == TRUE){
        

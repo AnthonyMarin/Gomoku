@@ -16,7 +16,7 @@ tr th, tr td, .leaderboard{
 
 body {font-family: Arial, Helvetica, sans-serif;
     padding:16px;
-    background-color: rgba(219,0,50,0.35);
+    background-color: #f5f0f0;
 }
 * {box-sizing: border-box}
 #buttons{

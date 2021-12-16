@@ -1,7 +1,4 @@
-<?php 
-           session_start();
-          
-?>
+
     
 <!DOCTYPE html>
 <html>
@@ -15,15 +12,48 @@
  
 </head>
 <body onload = "gameHandler()">
-<a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
+ <header id = 'topbar'>
+      <div id = "user">
+        <?php
+        
+      
+       
+        
+        session_start();
+        if( isset($_SESSION['username'])){
+           
+            
+        echo('Hello '.$_SESSION['username'].'!');
+
+        
+        }else{
+       
+
+        }
+        
+        ?>
+        </div>
+
+        <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
         <style>
             #home{
-                float:right;
-                padding-right:10px;
+                float:left;
                 height:60px;
+                
+            
             }
-            </style>
-            <br>
+            #topbar{
+                height:60px;
+                padding:15px;
+            }
+            
+            #user{
+                padding:15px;
+                float: right;
+            }
+        </style>
+        </header>
+            
         <br>
     <section>
         <div>
@@ -32,6 +62,7 @@
     </section>
     <section id = "gameInfo">
             <article id = "timer"><h3 >Time:<h3 id = "time"></h3></h3></article>
+            <article id = 'messageBox'></article>
             <article id = "currentPlayer"></article>
     </section>
 
@@ -296,6 +327,7 @@
             </div>
          
         </section>
+        <button type = 'button' onclick ="window.location=('game.php'); ">Reload</button>
 
         </div>
 

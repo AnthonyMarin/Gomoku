@@ -17,15 +17,48 @@
 </head>
 
 <body onload = "displayResults(<?php echo $sortType;?>)">
+       
+<header id = 'topbar'>
+        <div id = "user">
+        <?php
+        
+      
+       
+        
+    
+        if( isset($_SESSION['username'])){
+           
+            
+        echo('Hello '.$_SESSION['username'].'!');
+
+        
+        }else{
+       
+
+        }
+        
+        ?>
+        </div>
         <a href = 'index.php'> <img id = 'home' src = '../home.png'/></a>
         <style>
             #home{
-                float:right;
-                padding-right:10px;
+                float:left;
                 height:60px;
+                
+            
             }
-            </style>
-            <br>
+            #topbar{
+                height:60px;
+                padding:15px;
+            }
+            
+            #user{
+                padding:15px;
+                float: right;
+            }
+        </style>
+        </header>
+        <br>
         <br>
         <br>
         
@@ -33,7 +66,7 @@
 
     <form id= 'buttons' action = "leaderboard.php?" method = "GET"> 
         <div class = "buttonSections">
-         <input type = 'radio' id = "gwD" name='sortType'value ='0' />
+         <input type = 'radio' id = "gwD" name='sortType'value ='0' /> <!--radio options for sorting -->
          <label for="gwd">Games Won:Descending</label>
 
          <input type = 'radio' id = "gwa" name='sortType' value ='1' />
@@ -58,7 +91,7 @@
    
         
     <table id = "leaderboard" class = "leaderboard">
-    <?php if (isset($_SESSION['username'])) {
+    <?php if (isset($_SESSION['username'])) { //loads user information if logged in
         echo('<tr><th colspan = "5">Your Ranking</th></tr>');
         include '../phpScripts\getUserRank.php';
   

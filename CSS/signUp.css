@@ -1,6 +1,6 @@
 
 body {font-family: Arial, Helvetica, sans-serif;
-  background-color: rgba(219,0,50,0.35);
+  background-color: #f5f0f0;
 }
 * {box-sizing: border-box}
 
@@ -13,7 +13,7 @@ input[type=text], input[type=password] {
   
   border: none;
   
-  background: #f1f1f1;
+  background: #e3e1e1;
 }
 .container{
     width:65%;
